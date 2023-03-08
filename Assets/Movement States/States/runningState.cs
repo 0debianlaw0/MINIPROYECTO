@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class runningState : MonoBehaviour
+public class runningState : MovementBaseStates
 {
     // Start is called before the first frame update
-    void Start()
+    public override void EnterState(MovementStateManager movement)
     {
-        
+
+
     }
 
     // Update is called once per frame
-    void Update()
+    public override void UpdateState(MovementStateManager movement)
     {
-        
+
+
     }
 }
