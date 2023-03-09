@@ -155,17 +155,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdbac6c327e21545be441a4e4bfdf87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontalInput: 0
+  verticalInput: 0
   transformYSave: 0
   direction: {x: 0, y: 0, z: 0}
   hInputName: Horizontal
   vInputName: Vertical
-  moveSpeed: 3
+  currentMoveSpeed: 3
+  walkSpeed: 3
+  walkBackSpeed: 2
+  runSpeed: 7
+  runBackSpeed: 5
+  crouchSpeed: 2
+  crouchBackSpeed: 1
   characterController: {fileID: 178777358}
-  groundYOffset: 0
+  groundYOffset: 0.1
   groundMask:
     serializedVersion: 2
     m_Bits: 8
   gravity: -9.81
+  animator: {fileID: 0}
 --- !u!143 &178777358
 CharacterController:
   m_ObjectHideFlags: 0
@@ -282,7 +291,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 75
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -308,7 +317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1.9, z: -2}
+  m_LocalPosition: {x: 0.626, y: 2.6020002, z: -2.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -546,7 +555,7 @@ MonoBehaviour:
   ShoulderOffset: {x: 0, y: 0, z: 0}
   VerticalArmLength: 0.4
   CameraSide: 1
-  CameraDistance: 2
+  CameraDistance: 2.3
   CameraCollisionFilter:
     serializedVersion: 2
     m_Bits: 0
@@ -590,7 +599,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587435912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0.626, y: 1.202, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -816,6 +825,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f8535b99fe1415543ac975fd3b8ac4be, type: 2}
+    - target: {fileID: 8417361359673230750, guid: 9854c009fc01d7a43b2364f320f36ec4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d8545ca1fff5cc74b9a866a2ae9e39ba, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9854c009fc01d7a43b2364f320f36ec4, type: 3}
 --- !u!4 &1319021719 stripped
@@ -862,7 +876,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 587435913}
   m_Follow: {fileID: 587435913}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 75
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -887,7 +901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608336737}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1.9, z: -2}
+  m_LocalPosition: {x: 0.626, y: 2.6020002, z: -2.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
