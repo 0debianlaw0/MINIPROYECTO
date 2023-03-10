@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 178777357}
   - component: {fileID: 178777363}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   crouchSpeed: 2
   crouchBackSpeed: 1
   characterController: {fileID: 178777358}
-  groundYOffset: 0.1
+  groundYOffset: 0.6
   groundMask:
     serializedVersion: 2
     m_Bits: 8
@@ -221,6 +221,7 @@ Transform:
   m_Children:
   - {fileID: 587435913}
   - {fileID: 1319021719}
+  - {fileID: 1608336739}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -238,6 +239,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSense: 1
   cameraFollowPosition: {fileID: 587435913}
+  animator: {fileID: 0}
+  vCam: {fileID: 0}
+  hipFov: 0
+  currentFov: 0
+  adsFov: 40
+  fovSmoothSpeed: 10
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +298,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 75
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -825,6 +832,21 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f8535b99fe1415543ac975fd3b8ac4be, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 9854c009fc01d7a43b2364f320f36ec4,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 9854c009fc01d7a43b2364f320f36ec4,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 9854c009fc01d7a43b2364f320f36ec4,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8417361359673230750, guid: 9854c009fc01d7a43b2364f320f36ec4,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -876,7 +898,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 587435913}
   m_Follow: {fileID: 587435913}
   m_Lens:
-    FieldOfView: 75
+    FieldOfView: 60
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -901,11 +923,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608336737}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.626, y: 2.6020002, z: -2.3}
+  m_LocalPosition: {x: 0.626, y: 1.6020002, z: -2.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 537438842}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 178777362}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
