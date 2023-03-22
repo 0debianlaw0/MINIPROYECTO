@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 178777363}
   - component: {fileID: 178777364}
   - component: {fileID: 178777365}
+  - component: {fileID: 178777366}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -289,6 +290,23 @@ MonoBehaviour:
   - m_Rig: {fileID: 937765175}
     m_Active: 1
   m_Effectors: []
+--- !u!114 &178777366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178777356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62e24b2705edb7245bfff63acfa08d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: {fileID: 658255133644133649}
+  ammo: {fileID: 0}
+  animator: {fileID: 0}
+  rHandAim: {fileID: 1123831683}
+  lHandIK: {fileID: 1775529172}
 --- !u!1 &198226066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,6 +1802,7 @@ GameObject:
   - component: {fileID: 1306725581676623044}
   - component: {fileID: 3874956842024091663}
   - component: {fileID: 3874956842024091664}
+  - component: {fileID: 3874956842024091665}
   m_Layer: 6
   m_Name: M4_Carbine
   m_TagString: Untagged
@@ -2357,7 +2376,7 @@ MonoBehaviour:
   barrelPos: {fileID: 1141311569}
   bulletVelocity: 500
   bulletsPerShot: 1
-  gunShot: {fileID: 8300000, guid: 6a1a902ce65ddd64da5ecb7d6f0c657d, type: 3}
+  gunShot: {fileID: 8300000, guid: f7a99641aaa885543bfd6e0124605c89, type: 3}
 --- !u!82 &3874956842024091664
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2454,6 +2473,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3874956842024091665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658255133644133649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 816a913cf528e3242b1ece5848dffb0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipSize: 30
+  extraAmmo: 120
+  currentAmmo: 0
+  magInSound: {fileID: 8300000, guid: dbc755e072d02bd41a520d26ded701d0, type: 3}
+  magOutSound: {fileID: 8300000, guid: 4442512457e037542982b7c4c89d827b, type: 3}
+  releaseSlideSound: {fileID: 8300000, guid: 3555abd15913bf446a419fcbfaf6da48, type: 3}
 --- !u!1 &3948933246470707282
 GameObject:
   m_ObjectHideFlags: 0
