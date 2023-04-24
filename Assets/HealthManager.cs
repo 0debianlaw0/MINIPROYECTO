@@ -1,18 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int healthSize = 100;
+    [SerializeField] int currentHealth;
+
     void Start()
     {
-        
+        currentHealth = healthSize;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RestoreHealth(int healing)
     {
-        
+        if (healing >= healthSize - currentHealth)
+        {
+            currentHealth = 100;
+        }
+        else if (healing < healthSize - currentHealth)
+        {
+            currentHealth = currentHealth + healing;
+        }
+    }
+
+    public void DamagePlayer(int damage)
+    {
+        if (damage >= currentHealth)
+        {
+            //SceneManager.LoadScene("Death", LoadSceneMode.Single);
+            //Destroy(this, 1);
+        }
+        else
+        {
+            currentHealth = currentHealth - damage;
+        }
     }
 }
