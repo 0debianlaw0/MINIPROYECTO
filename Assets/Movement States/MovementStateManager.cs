@@ -28,14 +28,18 @@ public class MovementStateManager : MonoBehaviour
 
     [Header ("Gravity")]
     [SerializeField] float gravity = Physics.gravity.y;
+    [SerializeField] float jumpForce = 10;
+    [HideInInspector] public bool jumped;
     Vector3 velocity;
 
-    MovementBaseStates currentState;
+    public MovementBaseStates previousState;
+    public MovementBaseStates currentState;
 
     public idleState Idle = new idleState();
     public walkState Walk = new walkState();
     public runningState Run = new runningState();
     public crouchState Crouch = new crouchState();
+    public JumpState Jump = new JumpState();
 
     [HideInInspector] public Animator animator;
     
@@ -74,7 +78,7 @@ public class MovementStateManager : MonoBehaviour
         characterController.Move(direction.normalized * currentMoveSpeed * Time.deltaTime);        
     }
 
-    bool IsGrounded()
+    public bool IsGrounded()
     {
         spherePosition = new Vector3(transform.position.x, transform.position.y - groundYOffset, transform.position.z);
         if (Physics.CheckSphere(spherePosition, characterController.radius - 0.05f, groundMask))
@@ -92,6 +96,10 @@ public class MovementStateManager : MonoBehaviour
 
         characterController.Move(velocity * Time.deltaTime);
     }
+
+    public void JumpForce() => velocity.y += jumpForce;
+
+    public void Jumped() => jumped = true;
 
     private void OnDrawGizmos()
     {

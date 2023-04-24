@@ -18,6 +18,11 @@ public class runningState : MovementBaseStates
 
         if (movement.verticalInput < 0) movement.currentMoveSpeed = movement.runBackSpeed;
         else movement.currentMoveSpeed = movement.runSpeed;
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+            //movement.previousState = this;
+            //ExitState(movement, movement.Jump);
+        //}
     }
 
     void ExitState(MovementStateManager movement, MovementBaseStates state)
