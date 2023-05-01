@@ -23,7 +23,8 @@ public class Bullet : MonoBehaviour
     {
         if (collision.collider.tag == "Enemy")
         {
-            Debug.Log("DEF");
+            var enemy2 = collision.gameObject.GetComponent<enemy>();
+            enemy2.Damage();
         }
         Destroy(this.gameObject);
     }

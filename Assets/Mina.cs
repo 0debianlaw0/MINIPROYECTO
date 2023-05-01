@@ -23,7 +23,7 @@ public class Mina : MonoBehaviour
             Debug.Log("Did Hit");
             particleSystem.Play();
             healthManager.DamagePlayer(30);
-            GameObject.Destroy(gameObject, 0.5f);
+            Destroy(gameObject, 0.5f);
         }
         else
         {

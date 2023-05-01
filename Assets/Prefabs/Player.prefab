@@ -1657,9 +1657,10 @@ GameObject:
   - component: {fileID: 8937133636693420627}
   - component: {fileID: 8937133636693420626}
   - component: {fileID: 8937133636693420625}
+  - component: {fileID: 8937133636602922825}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1827,6 +1828,20 @@ MonoBehaviour:
   animator: {fileID: 0}
   rHandAim: {fileID: 8937133637629233348}
   lHandIK: {fileID: 8937133638319729555}
+--- !u!114 &8937133636602922825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8937133636693420619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704cf5a347d37ee4988027c83a729a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSize: 100
+  currentHealth: 0
 --- !u!1 &8937133637022321683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,7 +1852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8937133637022321682}
   - component: {fileID: 8937133637022321681}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BodyAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2024,7 +2039,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8937133637276315263}
   - component: {fileID: 8937133637276315248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rig 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2073,7 +2088,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8937133637404935014}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LHandIK_target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2219,7 +2234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8937133637430727755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LHandIK_hint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2284,7 +2299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8937133637629233349}
   - component: {fileID: 8937133637629233348}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HandAimR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2472,7 +2487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8937133638088846764}
   - component: {fileID: 8937133638088846763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2589,7 +2604,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8937133638319729556}
   - component: {fileID: 8937133638319729555}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LHandIK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2765,6 +2780,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MuzzleFlashParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476708005871032941, guid: 0843d24c2bfc3da4696a19b584c5b33d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0843d24c2bfc3da4696a19b584c5b33d, type: 3}
