@@ -10,7 +10,7 @@ public class WeaponManager : MonoBehaviour
     float fireRateTimer;
 
     [Header("Bullet Properties")]
-    [SerializeField] GameObject bullet;
+    [SerializeField] Rigidbody bullet;
     [SerializeField] Transform barrelPos;
     [SerializeField] float bulletVelocity;
     [SerializeField] int bulletsPerShot;
@@ -21,7 +21,11 @@ public class WeaponManager : MonoBehaviour
     WeaponAmmo ammo;
     ActionStateManager actions;
     WeaponRecoil recoil;
+    Vector3 targetPoint;
+    Vector3 startingDirection;
+    public float rotationSpeed;
 
+    public Camera cam;
     Light muzzleFlashLight;
     ParticleSystem muzzleFlashParticles;
     float lightIntensity;
@@ -40,6 +44,7 @@ public class WeaponManager : MonoBehaviour
         muzzleFlashLight.intensity = 0;
         muzzleFlashParticles = GetComponentInChildren<ParticleSystem>();
         fireRateTimer = fireRate;
+        startingDirection = barrelPos.transform.forward;
     }
 
     // Update is called once per frame
@@ -47,6 +52,7 @@ public class WeaponManager : MonoBehaviour
     {
         if (ShouldFire()) Fire();
         muzzleFlashLight.intensity = Mathf.Lerp(muzzleFlashLight.intensity, 0, lightReturnSpeed * Time.deltaTime);
+        Debug.DrawRay(barrelPos.position, (targetPoint - barrelPos.position) * bulletVelocity, Color.yellow);
     }
 
     bool ShouldFire()
@@ -70,9 +76,25 @@ public class WeaponManager : MonoBehaviour
         ammo.currentAmmo--;
         for (int i = 0; i < bulletsPerShot; i++)
         {
-            GameObject currentBullet = Instantiate(bullet, barrelPos.position, barrelPos.rotation);
-            Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
-            rb.AddForce(barrelPos.forward * bulletVelocity, ForceMode.Impulse);
+            Ray ray = cam.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+
+                targetPoint = hit.transform.position - barrelPos.position;
+
+            }
+            else
+            {
+                targetPoint = startingDirection;
+            }
+            Vector3 newDirection = Vector3.RotateTowards(barrelPos.transform.forward, targetPoint, rotationSpeed * Time.deltaTime, 0.0f);
+            barrelPos.transform.forward = newDirection;
+            Rigidbody clone;
+            clone = Instantiate(bullet, barrelPos.position, barrelPos.rotation) as Rigidbody;
+            clone.velocity = targetPoint * bulletVelocity;
+
+
         }
     }
 

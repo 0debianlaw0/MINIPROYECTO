@@ -46,7 +46,9 @@ public class AimStateManager : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, aimMask))
         {
+            
             aimPos.position = Vector3.Lerp(aimPos.position, hit.point, aimSmoothSpeed * Time.deltaTime);
+            Debug.DrawRay(aimPos.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             actualAimPos = hit.point;
         }
             
