@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class HealthManager : MonoBehaviour
 {
     public int healthSize = 100;
-    [SerializeField] int currentHealth;
+    [SerializeField] public int currentHealth;
 
     void Start()
     {

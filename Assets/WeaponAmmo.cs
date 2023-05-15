@@ -7,6 +7,7 @@ public class WeaponAmmo : MonoBehaviour
     public int clipSize;
     public int extraAmmo;
     [HideInInspector] public int currentAmmo;
+    public int ammoToReload;
 
     public AudioClip magInSound;
     public AudioClip magOutSound;
@@ -23,7 +24,7 @@ public class WeaponAmmo : MonoBehaviour
     {
         if (extraAmmo >= clipSize)
         {
-            int ammoToReload = clipSize - currentAmmo;
+            ammoToReload = clipSize - currentAmmo;
             extraAmmo -= ammoToReload;
             currentAmmo += ammoToReload;
         }
