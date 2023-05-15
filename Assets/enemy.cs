@@ -13,9 +13,11 @@ public class enemy : MonoBehaviour
     public ParticleSystem particleSystem;
     public HealthManager healthManager;
     bool isIn;
+    bool done = false;
 
     void Start()
     {
+
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         collider = GetComponent<Collider>();
@@ -26,8 +28,9 @@ public class enemy : MonoBehaviour
     {
         if (colD == true)
         {
+            StartCoroutine(TenSeconds());
+            animator.SetBool("run", true);
             agent.destination = goal.position;
-            TenSeconds();
         }
         if (vida <= 0)
         {
@@ -38,9 +41,7 @@ public class enemy : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            animator.SetBool("RUN", true);
             colD = true;
-
         }
     }
     private void OnTriggerStay(Collider other)
@@ -68,16 +69,18 @@ public class enemy : MonoBehaviour
 
     public void DamagePlayer()
     {
-        if (isIn == true)
+        if (isIn == true && done == false)
         {
-            healthManager.currentHealth -= 10;
+            done = true;
+            healthManager.currentHealth = healthManager.currentHealth - 10;
         }
     }
 
-    IEnumerator TenSeconds()
+    public IEnumerator TenSeconds()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(3f);
+        DamagePlayer();
         particleSystem.Play();
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 0.1f);
     }
 }
