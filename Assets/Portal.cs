@@ -9,7 +9,7 @@ public class portal : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
             }

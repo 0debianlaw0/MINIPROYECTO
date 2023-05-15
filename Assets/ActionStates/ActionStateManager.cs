@@ -11,8 +11,11 @@ public class ActionStateManager : MonoBehaviour
     public DefaultState Default = new DefaultState();
 
     public GameObject currentWeapon;
+    public GameObject currentWeapon2;
     [HideInInspector] public WeaponAmmo ammo;
+    [HideInInspector] public WeaponAmmo ammo2;
     AudioSource audioSource;
+    AudioSource audioSource2;
 
     [HideInInspector] public Animator animator;
 
@@ -25,7 +28,9 @@ public class ActionStateManager : MonoBehaviour
     {
         SwitchState(Default);
         ammo = currentWeapon.GetComponent<WeaponAmmo>();
+        ammo2 = currentWeapon2.GetComponent<WeaponAmmo>();
         audioSource = currentWeapon.GetComponent<AudioSource>();
+        audioSource2 = currentWeapon2.GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
     }
 
@@ -43,22 +48,57 @@ public class ActionStateManager : MonoBehaviour
 
     public void WeaponReloaded()
     {
-        ammo.Reload();
-        SwitchState(Default);
+        if (currentWeapon.activeSelf == true)
+        {
+            ammo.Reload();
+            SwitchState(Default);
+        }
+        
+        if (currentWeapon2.activeSelf == false)
+        {
+            ammo2.Reload();
+            SwitchState(Default);
+        }
     }
 
     public void MagOut()
     {
-        audioSource.PlayOneShot(ammo.magOutSound);
+        if (currentWeapon.activeSelf == true)
+        {
+            audioSource.PlayOneShot(ammo.magOutSound);
+        }
+        if (currentWeapon2.activeSelf == true)
+        {
+            audioSource2.PlayOneShot(ammo2.magOutSound);
+        }
+        
     }
 
     public void MagIn()
     {
-        audioSource.PlayOneShot(ammo.magInSound);
+        if (currentWeapon.activeSelf == true)
+        {
+            audioSource.PlayOneShot(ammo.magInSound);
+        }
+        if (currentWeapon2.activeSelf == true)
+        {
+            audioSource2.PlayOneShot(ammo2.magInSound);
+        }
+
+
     }
 
     public void ReleaseSlide()
     {
-        audioSource.PlayOneShot(ammo.releaseSlideSound);
+        if (currentWeapon.activeSelf == true)
+        {
+            audioSource.PlayOneShot(ammo.releaseSlideSound);
+        }
+        if (currentWeapon2.activeSelf == true)
+        {
+            audioSource2.PlayOneShot(ammo2.releaseSlideSound);
+        }
+
+
     }
 }
