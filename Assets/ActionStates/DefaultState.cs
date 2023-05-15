@@ -22,8 +22,10 @@ public class DefaultState : ActionBaseState
 
     bool CanReload(ActionStateManager action)
     {
-        if (action.ammo.currentAmmo == action.ammo.clipSize) return false;
-        else if (action.ammo.extraAmmo == 0) return false;
+        if (action.ammo.currentAmmo == action.ammo.clipSize && action.currentWeapon.activeSelf == true) return false;
+        else if (action.ammo.extraAmmo == 0 && action.currentWeapon.activeSelf == true) return false;
+        if (action.ammo2.currentAmmo == action.ammo2.clipSize && action.currentWeapon2.activeSelf == true) return false;
+        else if (action.ammo2.extraAmmo == 0 && action.currentWeapon2.activeSelf == true) return false;
         else return true;
     }
 }

@@ -29,8 +29,8 @@ public class HealthManager : MonoBehaviour
     {
         if (damage >= currentHealth)
         {
-            //SceneManager.LoadScene("Death", LoadSceneMode.Single);
-            //Destroy(this, 1);
+            Destroy(gameObject, 1);
+            SceneManager.LoadScene("Death", LoadSceneMode.Single);
         }
         else
         {
