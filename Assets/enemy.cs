@@ -10,6 +10,8 @@ public class enemy : MonoBehaviour
     int vida = 100;
     public Animator animator;
     public Collider collider;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     public ParticleSystem particleSystem;
     public HealthManager healthManager;
     bool isIn;
@@ -17,7 +19,7 @@ public class enemy : MonoBehaviour
 
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         collider = GetComponent<Collider>();
@@ -80,7 +82,8 @@ public class enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         DamagePlayer();
+        AudioSource.PlayClipAtPoint(audioClip, transform.position);
         particleSystem.Play();
-        Destroy(gameObject, 0.1f);
+        Destroy(gameObject, 0.2f);
     }
 }

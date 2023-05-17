@@ -7,10 +7,20 @@ public class HealthManager : MonoBehaviour
 {
     public int healthSize = 100;
     [SerializeField] public int currentHealth;
+    public string escenaMuerte;
 
     void Start()
     {
         currentHealth = healthSize;
+    }
+
+    private void Update()
+    {
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject, 1);
+            SceneManager.LoadScene(escenaMuerte, LoadSceneMode.Single);
+        }
     }
 
     public void RestoreHealth(int healing)
@@ -30,7 +40,7 @@ public class HealthManager : MonoBehaviour
         if (damage >= currentHealth)
         {
             Destroy(gameObject, 1);
-            SceneManager.LoadScene("Death", LoadSceneMode.Single);
+            SceneManager.LoadScene(escenaMuerte, LoadSceneMode.Single);
         }
         else
         {
