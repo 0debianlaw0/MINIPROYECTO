@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2641864767356279204}
   - component: {fileID: 4350717705809770634}
   - component: {fileID: -4595106867746321256}
+  - component: {fileID: 5447867860902397323}
   m_Layer: 0
   m_Name: heal
   m_TagString: Untagged
@@ -111,8 +112,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.11938929, z: 0.019999996}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.12810445, y: 0.15232328, z: 0.026140478}
+  m_Center: {x: -0.019373655, y: 0.0045266454, z: -0.0005565584}
 --- !u!114 &4350717705809770634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,3 +143,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &5447867860902397323
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37385087837564308}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.11938929, z: 0.019999996}
+  m_Center: {x: 0, y: 0, z: 0}

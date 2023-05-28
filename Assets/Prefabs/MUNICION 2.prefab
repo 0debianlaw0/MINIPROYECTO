@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 5507086298189364081}
   - component: {fileID: 4137422829897590702}
   - component: {fileID: 5507086298189364083}
-  - component: {fileID: 5507086298189364082}
   - component: {fileID: 3547813600456499024}
-  - component: {fileID: 4380871026604737635}
+  - component: {fileID: 294161854615277035}
+  - component: {fileID: -3686148328595445822}
   m_Layer: 0
-  m_Name: MUNICION
+  m_Name: MUNICION 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,19 +137,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06284523, y: 0.035128277, z: 0.034114648}
   m_Center: {x: -0.00076742173, y: 0.0013991322, z: 0.0070573264}
---- !u!114 &5507086298189364082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1001826877492445957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2182f9ee9eb645f448aab39567ba4c39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponAmmo: {fileID: 0}
 --- !u!54 &3547813600456499024
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -166,7 +153,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &4380871026604737635
+--- !u!114 &294161854615277035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001826877492445957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9faec9eba2fa1c41bf93ac53292304f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponAmmo: {fileID: 0}
+--- !u!65 &-3686148328595445822
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

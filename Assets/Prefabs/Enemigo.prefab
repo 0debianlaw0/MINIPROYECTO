@@ -5193,6 +5193,7 @@ MonoBehaviour:
   particleSystem: {fileID: 0}
   healthManager: {fileID: 0}
   municion: {fileID: 1001826877492445957, guid: f5826a3214aef2643ac9bcc23a2ffa2e, type: 3}
+  municion2: {fileID: 1001826877492445957, guid: d082c73a5f20eb5479e50ba5b52f7a1f, type: 3}
   heal: {fileID: 37385087837564308, guid: 143676b40b36d5c4d95191e6492128e5, type: 3}
 --- !u!4 &3169919049609249567 stripped
 Transform:

@@ -14,6 +14,7 @@ public class enemy : MonoBehaviour
     public ParticleSystem particleSystem;
     public HealthManager healthManager;
     public GameObject municion;
+    public GameObject municion2;
     public GameObject heal;
     GameObject player;
     bool isIn;
@@ -32,9 +33,16 @@ public class enemy : MonoBehaviour
 
     private void Update()
     {
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        if (distance <= 2)
+        {
+            DamagePlayer();
+            AudioSource.PlayClipAtPoint(audioClip, transform.position);
+            particleSystem.Play();
+            Destroy(gameObject, 0.2f);
+        }
         if (colD == true)
         {
-            StartCoroutine(TenSeconds());
             animator.SetBool("run", true);
             agent.destination = player.transform.position;
         }
@@ -75,14 +83,6 @@ public class enemy : MonoBehaviour
         }
     }
 
-    public IEnumerator TenSeconds()
-    {
-        yield return new WaitForSeconds(3f);
-        DamagePlayer();
-        AudioSource.PlayClipAtPoint(audioClip, transform.position);
-        particleSystem.Play();
-        Destroy(gameObject, 0.2f);
-    }
 
     private void OnDestroy()
     {
@@ -91,6 +91,7 @@ public class enemy : MonoBehaviour
         if (randomFloat >= 0.5f)
         {
             Instantiate(municion, transform.position, municion.transform.rotation);
+            Instantiate(municion2, transform.position, municion.transform.rotation);
             Instantiate(heal, transform.position, heal.transform.rotation);
         }
     }
