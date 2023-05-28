@@ -5,8 +5,7 @@ using System.Collections;
 public class enemy : MonoBehaviour
 {
     public NavMeshAgent agent;
-    [SerializeField]public Transform goal;
-    public bool colD = false;
+    public bool colD = true;
     int vida = 100;
     public Animator animator;
     public Collider collider;
@@ -14,11 +13,16 @@ public class enemy : MonoBehaviour
     public AudioClip audioClip;
     public ParticleSystem particleSystem;
     public HealthManager healthManager;
+    public GameObject municion;
+    public GameObject heal;
+    GameObject player;
     bool isIn;
     bool done = false;
 
     void Start()
     {
+        player = GameObject.Find("Player");
+        healthManager = GameObject.Find("Player").GetComponent<HealthManager>();
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
@@ -32,18 +36,11 @@ public class enemy : MonoBehaviour
         {
             StartCoroutine(TenSeconds());
             animator.SetBool("run", true);
-            agent.destination = goal.position;
+            agent.destination = player.transform.position;
         }
         if (vida <= 0)
         {
             Destroy(gameObject);
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            colD = true;
         }
     }
     private void OnTriggerStay(Collider other)
@@ -85,5 +82,16 @@ public class enemy : MonoBehaviour
         AudioSource.PlayClipAtPoint(audioClip, transform.position);
         particleSystem.Play();
         Destroy(gameObject, 0.2f);
+    }
+
+    private void OnDestroy()
+    {
+        float randomFloat = Random.value;
+
+        if (randomFloat >= 0.5f)
+        {
+            Instantiate(municion, transform.position, municion.transform.rotation);
+            Instantiate(heal, transform.position, heal.transform.rotation);
+        }
     }
 }

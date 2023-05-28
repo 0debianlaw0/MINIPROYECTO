@@ -6,6 +6,11 @@ public class Healing : MonoBehaviour
 {
     public HealthManager healthManager;
 
+    private void Start()
+    {
+        healthManager = GameObject.Find("Player").GetComponent<HealthManager>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")

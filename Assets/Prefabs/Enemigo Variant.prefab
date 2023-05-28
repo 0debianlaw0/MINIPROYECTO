@@ -4962,15 +4962,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9854c009fc01d7a43b2364f320f36ec4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.37
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9854c009fc01d7a43b2364f320f36ec4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.072
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9854c009fc01d7a43b2364f320f36ec4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.37
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9854c009fc01d7a43b2364f320f36ec4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4978,7 +4978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9854c009fc01d7a43b2364f320f36ec4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9854c009fc01d7a43b2364f320f36ec4, type: 3}
       propertyPath: m_LocalRotation.y
@@ -4986,7 +4986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9854c009fc01d7a43b2364f320f36ec4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9854c009fc01d7a43b2364f320f36ec4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5002,7 +5002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9854c009fc01d7a43b2364f320f36ec4, type: 3}
       propertyPath: m_Name
-      value: Enemigo Variant
+      value: Enemigo
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9854c009fc01d7a43b2364f320f36ec4, type: 3}
       propertyPath: m_TagString
@@ -5012,6 +5012,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 89e94c46470ce544596729c59c5c1a6f, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 9854c009fc01d7a43b2364f320f36ec4, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8417361359673230750, guid: 9854c009fc01d7a43b2364f320f36ec4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5042,7 +5046,7 @@ CapsuleCollider:
   m_Height: 17.65
   m_Direction: 1
   m_Center: {x: 0, y: 8.28, z: 0}
---- !u!135 &7549782875806346893
+--- !u!135 &1733810244
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5186,7 +5190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1136736024}
-  goal: {fileID: 0}
   colD: 0
   animator: {fileID: 0}
   collider: {fileID: 0}

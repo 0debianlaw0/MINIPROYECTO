@@ -9,7 +9,8 @@ public class PickAmmo : MonoBehaviour
 
     private void Start()
     {
-        
+        weaponAmmo = GameObject.Find("ARMA1").GetComponent<WeaponAmmo>();
+        weaponAmmo2 = GameObject.Find("ARMA2").GetComponent<WeaponAmmo>();
     }
     private void OnTriggerEnter(Collider other)
     {

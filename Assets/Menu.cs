@@ -21,4 +21,21 @@ public class Menu : MonoBehaviour
     {
         Cursor.visible = true;
     }
+
+    public void LVL1()
+    {
+        SceneManager.LoadScene("LVL1", LoadSceneMode.Single);
+    }
+    public void LVL2()
+    {
+        SceneManager.LoadScene("LVL2", LoadSceneMode.Single);
+    }
+    public void LVL3()
+    {
+        SceneManager.LoadScene("LVL3", LoadSceneMode.Single);
+    }
+    public void MenuS()
+    {
+        SceneManager.LoadScene("MENU", LoadSceneMode.Single);
+    }
 }
