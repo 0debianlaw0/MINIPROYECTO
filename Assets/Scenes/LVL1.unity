@@ -336,10 +336,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SPAWNER (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8154379654656211487, guid: b66a7b3a55f84424584e90e214fa8ac0, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b66a7b3a55f84424584e90e214fa8ac0, type: 3}
 --- !u!1 &98543939
@@ -2366,6 +2362,63 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &1217427373
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8639152932452737157, guid: 8a86158a646281f46b6d40f22eef68ca, type: 3}
+      propertyPath: m_Name
+      value: MUNICION
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639152932452737159, guid: 8a86158a646281f46b6d40f22eef68ca, type: 3}
+      propertyPath: m_RootOrder
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639152932452737159, guid: 8a86158a646281f46b6d40f22eef68ca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.196628
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639152932452737159, guid: 8a86158a646281f46b6d40f22eef68ca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.810857
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639152932452737159, guid: 8a86158a646281f46b6d40f22eef68ca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.815447
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639152932452737159, guid: 8a86158a646281f46b6d40f22eef68ca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639152932452737159, guid: 8a86158a646281f46b6d40f22eef68ca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639152932452737159, guid: 8a86158a646281f46b6d40f22eef68ca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639152932452737159, guid: 8a86158a646281f46b6d40f22eef68ca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639152932452737159, guid: 8a86158a646281f46b6d40f22eef68ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639152932452737159, guid: 8a86158a646281f46b6d40f22eef68ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639152932452737159, guid: 8a86158a646281f46b6d40f22eef68ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8a86158a646281f46b6d40f22eef68ca, type: 3}
 --- !u!1 &1294176151
 GameObject:
   m_ObjectHideFlags: 0
@@ -3748,7 +3801,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoVida: {fileID: 1977282470}
   textoAmmo: {fileID: 1322428087}
-  textoAmmo2: {fileID: 1382775264}
   textoClip: {fileID: 181305488}
   textoClip2: {fileID: 1483706904}
   healthManager: {fileID: 8937133636602922842}
@@ -5090,6 +5142,18 @@ PrefabInstance:
     - target: {fileID: 369654750, guid: e50e82550f02d7d4f951fbc9b7b2fa9b, type: 3}
       propertyPath: m_BoundingSphereOverride.z
       value: 1.0691825e-38
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053437742, guid: e50e82550f02d7d4f951fbc9b7b2fa9b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053437742, guid: e50e82550f02d7d4f951fbc9b7b2fa9b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053437742, guid: e50e82550f02d7d4f951fbc9b7b2fa9b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6054803693620612720, guid: e50e82550f02d7d4f951fbc9b7b2fa9b, type: 3}
       propertyPath: cam
