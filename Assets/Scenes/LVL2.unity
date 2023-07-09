@@ -7209,10 +7209,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6054803693620612720, guid: e50e82550f02d7d4f951fbc9b7b2fa9b, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 330585545}
     - target: {fileID: 6070312542040555418, guid: e50e82550f02d7d4f951fbc9b7b2fa9b, type: 3}
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6147770192732052636, guid: e50e82550f02d7d4f951fbc9b7b2fa9b, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 330585545}
     - target: {fileID: 6222455752257865822, guid: e50e82550f02d7d4f951fbc9b7b2fa9b, type: 3}
       propertyPath: m_Layer
       value: 3
