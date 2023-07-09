@@ -1,21 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PickAmmo : MonoBehaviour
 {
-    public WeaponAmmo weaponAmmo;
-
+    
+    private MUNICIONHASTAAQUIHEMOSLLEGAO _municionhastaaquihemosllegao;
     private void Start()
     {
-        weaponAmmo = GameObject.Find("ARMA1").GetComponent<WeaponAmmo>();
+        _municionhastaaquihemosllegao = GameObject.Find("MUNICION").GetComponent<MUNICIONHASTAAQUIHEMOSLLEGAO>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (weaponAmmo.isActiveAndEnabled == true && other.tag == "Player")
+        if (other.tag == "Player")
         {
-            weaponAmmo.currentAmmo = weaponAmmo.currentAmmo + 10;
+            _municionhastaaquihemosllegao.currentAmmo = _municionhastaaquihemosllegao.currentAmmo + 10;
             Destroy(gameObject, 0.1f);
         }
     }
+    
 }

@@ -30,10 +30,13 @@ public class WeaponManager : MonoBehaviour
     ParticleSystem muzzleFlashParticles;
     float lightIntensity;
     [SerializeField] float lightReturnSpeed = 20;
+    private MUNICIONHASTAAQUIHEMOSLLEGAO _municionhastaaquihemosllegao;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        
         recoil = GetComponent<WeaponRecoil>();
         ammo = GetComponent<WeaponAmmo>();
         audioSource = GetComponent<AudioSource>();
@@ -43,6 +46,7 @@ public class WeaponManager : MonoBehaviour
         lightIntensity = muzzleFlashLight.intensity;
         muzzleFlashLight.intensity = 0;
         muzzleFlashParticles = GetComponentInChildren<ParticleSystem>();
+        _municionhastaaquihemosllegao = GameObject.Find("MUNICION").GetComponent<MUNICIONHASTAAQUIHEMOSLLEGAO>();
         fireRateTimer = fireRate;
         startingDirection = barrelPos.transform.forward;
     }
@@ -59,7 +63,7 @@ public class WeaponManager : MonoBehaviour
     {
         fireRateTimer += Time.deltaTime;
         if (fireRateTimer < fireRate) return false;
-        if (ammo.currentAmmo == 0) return false;
+        if (_municionhastaaquihemosllegao.currentAmmo == 0) return false;
         if (actions.currentState == actions.Reload) return false;
         if (semiAuto && Input.GetKeyDown(KeyCode.Mouse0)) return true;
         if (!semiAuto && Input.GetKey(KeyCode.Mouse0)) return true;
@@ -73,7 +77,7 @@ public class WeaponManager : MonoBehaviour
         audioSource.PlayOneShot(gunShot);
         recoil.TriggerRecoil();
         TriggerMuzzleFlash();
-        ammo.currentAmmo--;
+        _municionhastaaquihemosllegao.currentAmmo--;
         for (int i = 0; i < bulletsPerShot; i++)
         {
             Ray ray = cam.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));

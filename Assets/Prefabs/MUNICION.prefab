@@ -149,7 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2182f9ee9eb645f448aab39567ba4c39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponAmmo: {fileID: 0}
 --- !u!54 &3547813600456499024
 Rigidbody:
   m_ObjectHideFlags: 0

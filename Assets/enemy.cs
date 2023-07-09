@@ -91,7 +91,7 @@ public class enemy : MonoBehaviour
         if (randomFloat >= 0.5f)
         {
             Instantiate(municion, transform.position, municion.transform.rotation);
-            Instantiate(municion2, transform.position, municion.transform.rotation);
+            //Instantiate(municion2, transform.position, municion.transform.rotation);
             Instantiate(heal, transform.position, heal.transform.rotation);
         }
     }

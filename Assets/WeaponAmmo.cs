@@ -6,16 +6,18 @@ public class WeaponAmmo : MonoBehaviour
 {
     public int clipSize;
     public int extraAmmo;
-    [HideInInspector] public int currentAmmo;
+    //public int currentAmmo;
     public int ammoToReload;
 
     public AudioClip magInSound;
     public AudioClip magOutSound;
     public AudioClip releaseSlideSound;
+    private MUNICIONHASTAAQUIHEMOSLLEGAO _municionhastaaquihemosllegao;
     // Start is called before the first frame update
     void Start()
     {
-        currentAmmo = clipSize;
+        _municionhastaaquihemosllegao = GameObject.Find("MUNICION").GetComponent<MUNICIONHASTAAQUIHEMOSLLEGAO>();
+        _municionhastaaquihemosllegao.currentAmmo = clipSize;
     }
 
     
@@ -24,21 +26,21 @@ public class WeaponAmmo : MonoBehaviour
     {
         if (extraAmmo >= clipSize)
         {
-            ammoToReload = clipSize - currentAmmo;
+            ammoToReload = clipSize - _municionhastaaquihemosllegao.currentAmmo;
             extraAmmo -= ammoToReload;
-            currentAmmo += ammoToReload;
+            _municionhastaaquihemosllegao.currentAmmo += ammoToReload;
         }
         else if (extraAmmo > 0)
         {
-            if (extraAmmo + currentAmmo > clipSize)
+            if (extraAmmo + _municionhastaaquihemosllegao.currentAmmo > clipSize)
             {
-                int leftOverAmmo = extraAmmo + currentAmmo - clipSize;
+                int leftOverAmmo = extraAmmo + _municionhastaaquihemosllegao.currentAmmo - clipSize;
                 extraAmmo = leftOverAmmo;
-                currentAmmo = clipSize;
+                _municionhastaaquihemosllegao.currentAmmo = clipSize;
             }
             else
             {
-                currentAmmo += extraAmmo;
+                _municionhastaaquihemosllegao.currentAmmo += extraAmmo;
                 extraAmmo = 0;
             }
         }
